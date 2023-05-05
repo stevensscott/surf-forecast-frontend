@@ -1,17 +1,20 @@
 import axios from "axios";
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
+import { ConditionsIndex } from "./ConditionsIndex";
 export function Content() {
+  const [conditions, setConditions] = useState([]);
+
   const handleIndexConditions = () => {
     axios.get("http://localhost:3000/conditions").then((response) => {
-      console.log(response.data);
+      setConditions(response.data);
     });
   };
 
   useEffect(handleIndexConditions, []);
   return (
-    <div>
-      <h1>Welcome to React!</h1>
+    <div className="container">
+      <h1>Scott Surf Forecast</h1>
+      <ConditionsIndex conditions={conditions} />
     </div>
   );
 }
