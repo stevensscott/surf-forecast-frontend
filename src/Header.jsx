@@ -1,39 +1,30 @@
+import logo from "./assets/Scott Forecast.png";
 export function Header() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-light bg-light py-5">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Second Beach 5 Day Forecast
+    <nav className="navbar row  bg-body-tertiary navbar-dark  py-3">
+      <div className="col-12 text-center float-center">
+        <a href="/">
+          <img className="logo" src={logo}></img>
         </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Current Boards
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Observed Conditions
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Board and Wetsuit Suggestion
-              </a>
-            </li>
-          </ul>
+      </div>
+
+      <div className="col-12">
+        <div className="row" id="">
+          <div className="col text-end float-end">
+            <a className="active" aria-current="page" href="/boards">
+              Current Boards
+            </a>
+          </div>
+          <div className="col-2 text-center float-center">
+            <a className="" href="/observed">
+              Observed Conditions
+            </a>
+          </div>
+          <div className="col">
+            <a className="" href="#">
+              Board and Wetsuit Suggestion
+            </a>
+          </div>
         </div>
       </div>
     </nav>

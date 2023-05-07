@@ -1,3 +1,53 @@
 html {
   scroll-behavior: smooth;
 }
+
+
+.navbar-dark{
+  background-color: 	#37506d
+
+}
+
+.logo{
+
+height: 225px;
+width: 225px;
+border: 2px solid black;
+border-radius: 125px;
+
+}
+
+.page-footer{
+  height: 100px;
+  background-color: 	#37506d;
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  color: white;
+  left: 0;
+}
+
+#root{
+  height: 100vh;
+
+  max-width: 100%;
+  background-size: cover;
+  overflow-y: scroll;
+  background-image: url("./assets/brown-background-natural-sand-texture_53876-145228.avif");
+}
+
+
+.container{
+margin-bottom: 100px;
+}
+
+nav a{
+color: white;
+text-decoration: none;
+
+}
+
+.card button{
+  background-color: 	#37506d;
+
+}
