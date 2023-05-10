@@ -16,7 +16,7 @@ export function Header() {
             </a>
           </div>
           <div className="col-2 text-center float-center">
-            <a className="" href="/observed">
+            <a className="" href="/observed_conditions">
               Observed Conditions
             </a>
           </div>
