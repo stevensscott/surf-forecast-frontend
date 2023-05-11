@@ -4,7 +4,7 @@ export function ConditionsIndex(props) {
   return (
     <div>
       <h4 className="py-5"> 5 Day Surf Forecast</h4>
-      <table className="table table-responsive">
+      <table className="table table-responsive table-hover">
         <thead>
           <tr className="table">
             <th scope="col" className="col-sm-1">

@@ -1,21 +1,15 @@
 export function BoardShow(props) {
-  console.log(props.board, "PROPS");
-
   return (
     <div>
       <div className="card">
-        <img className="card-img-top" style={{ maxWidth: "500px" }} src={"test"} alt="Card image cap"></img>
         <div className="card-body">
-          <h2 className="card-title">Board: {props.board.make}</h2>
-        </div>
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item">Student: {props.board.board_model}</li>
-          <li className="list-group-item">Description:{props.board.board_model}</li>
-        </ul>
-        <div className="card-body">
-          <button href="#" className="btn btn-dark" onClick={props.onClose}>
-            Close
-          </button>
+          <div>
+            <h2 className="card-title">{props.board.make + " " + props.board.board_model + " " + props.board.size}</h2>
+            <h3>Best Conditions For Me:</h3>
+            <p>{props.board.best_conditions}</p>
+            <h3>Board Description:</h3>
+            <p>{props.board.description}</p>
+          </div>
         </div>
       </div>
     </div>

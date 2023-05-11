@@ -24,7 +24,7 @@ export function ObservedConditionsIndex(props) {
         Enter Single Observed Surf Condition
       </button>
       <h2 className="py-5"> Observed Surf Conditions</h2>
-      <table className="table table-responsive table-sm">
+      <table className="table table-responsive table-sm table-hover">
         <thead>
           <tr className="table">
             <th scope="col" className="col-sm-1 th-sm">
