@@ -39,11 +39,11 @@ export function ConditionsIndex(props) {
           ))}
         </tbody>
       </table>
-      {/* <div id="map">
+      <div id="map">
         <Map height={200} width={400} defaultCenter={[41.4901, -71.3128]} defaultZoom={12}>
           <Marker width={50} anchor={[41.4875, -71.2565]} />
         </Map>
-      </div> */}
+      </div>
     </div>
   );
 }

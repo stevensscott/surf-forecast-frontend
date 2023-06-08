@@ -2,30 +2,41 @@ import { useState } from "react";
 import axios from "axios";
 
 export function CSVImport() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("My handle submit is working");
-  };
-  return (
-    <div className="card card h-300">
-      <div className="form-group" id="conditions-new">
-        <div className="card-body">
-          <h1>Upload Multi Day Conditions via CSV</h1>
-          {/* <form className="condition_form" onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <input className="form-control" type="file" id="formFile"></input>
-            </div>
+  const [file, setFile] = useState();
 
-            <button id="condition_submit" type="submit">
-              Submit
-            </button>
-          </form> */}
-          <form onSubmit={handleSubmit}>
-            <input type="file" name="file" />
-          </form>
-          <button type="submit">Submit</button>
-        </div>
-      </div>
+  const fileReader = new FileReader();
+
+  const handleOnChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    //  my file exist in csvOutput
+    if (file) {
+      const params = new FormData(e.target);
+      params.append("file", file);
+      console.log(file);
+
+      //this needs to somehow pass my entire file to the method I have the writes each row to the DB
+      axios.post("http://localhost:3000/bulk_import_conditions.json", params).then((response) => {
+        e.target.reset();
+        window.location.href = "/observed_conditions";
+      });
+      // };
+
+      fileReader.readAsText(file);
+    }
+  };
+
+  return (
+    <div style={{ textAlign: "center" }}>
+      <h1>Bulk Import Conditions </h1>
+      <form onSubmit={handleOnSubmit}>
+        <input type="file" id="csvFileInput" onChange={handleOnChange} />
+        <input type="hidden" name="csvimport" />
+        <button type="submit">Import CSV</button>
+      </form>
     </div>
   );
 }
